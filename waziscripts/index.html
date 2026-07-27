@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WaziScripts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Animated energy background -->
+    <div class="bg-layer" aria-hidden="true">
+      <canvas id="particles"></canvas>
+      <div class="bg-glow bg-glow--1"></div>
+      <div class="bg-glow bg-glow--2"></div>
+      <div class="bg-grid"></div>
+    </div>
+
+    <!-- Welcome intro -->
+    <div id="intro" class="intro">
+      <div class="intro__inner">
+        <h1 class="intro__welcome">Welcome</h1>
+        <div class="intro__divider"></div>
+        <p class="intro__brand">WaziScripts</p>
+      </div>
+    </div>
+
+    <!-- App -->
+    <div id="app" class="app" aria-hidden="true">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__bolt"></span>
+          <span>WaziScripts</span>
+        </div>
+      </header>
+
+      <main class="view-host">
+        <!-- Home / main menu -->
+        <section class="view view--home is-active" data-view="home">
+          <div class="hero">
+            <h2 class="hero__title">Script Hub</h2>
+            <p class="hero__sub">Choose a category to get started.</p>
+          </div>
+
+          <div class="cards">
+            <button class="card" data-go="bloxfruits">
+              <div class="card__icon"><img src="images/bloxfruits.png" alt="Blox Fruits" /></div>
+              <div class="card__name">Blox Fruits</div>
+              <div class="card__status card__status--live">Available</div>
+            </button>
+            <button class="card card--soon" data-go="garden">
+              <div class="card__icon"><img src="https://tr.rbxcdn.com/180DAY-076fa0b396f5eac77ef9bb004dac1842/256/256/Image/Webp/noFilter" alt="Grow a Garden" /></div>
+              <div class="card__name">Grow a Garden</div>
+              <div class="card__status card__status--soon">Coming Soon…</div>
+            </button>
+            <button class="card card--soon" data-go="mm2">
+              <div class="card__icon"><img src="images/mm2.png" alt="MM2" /></div>
+              <div class="card__name">MM2</div>
+              <div class="card__status card__status--soon">Coming Soon…</div>
+            </button>
+          </div>
+        </section>
+
+        <!-- Blox Fruits -->
+        <section class="view view--script" data-view="bloxfruits">
+          <button class="back-btn" data-go="home">← Back</button>
+          <div class="panel">
+            <div class="panel__head">
+              <h2 class="panel__title">Blox Fruits</h2>
+              <span class="panel__badge">Live</span>
+            </div>
+            <p class="panel__hint">Copy the loadstring below and paste it into your executor.</p>
+            <div class="codeblock">
+              <pre id="bloxfruits-code" class="codeblock__pre">loadstring(game:HttpGet("https://w4zi.github.io/wz/bf.lua"))()</pre>
+              <button class="copy-btn" id="copy-bloxfruits" data-code-id="bloxfruits-code">
+                <span class="copy-btn__label">Copy</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Grow a Garden -->
+        <section class="view view--soon" data-view="garden">
+          <button class="back-btn" data-go="home">← Back</button>
+          <div class="panel panel--center">
+            <div class="panel__head">
+              <h2 class="panel__title">Grow a Garden</h2>
+              <span class="panel__badge panel__badge--soon">Coming Soon</span>
+            </div>
+            <p class="panel__hint">Join our Discord for the latest updates and new scripts!</p>
+            <a class="discord-btn" href="https://discord.gg/NdzUJRkKeA" target="_blank" rel="noopener">
+              <img class="discord-btn__img" src="https://pngimg.com/uploads/discord/discord_PNG8.png" alt="Discord" />
+              <span>Join Discord</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- MM2 -->
+        <section class="view view--soon" data-view="mm2">
+          <button class="back-btn" data-go="home">← Back</button>
+          <div class="panel panel--center">
+            <div class="panel__head">
+              <h2 class="panel__title">MM2</h2>
+              <span class="panel__badge panel__badge--soon">Coming Soon</span>
+            </div>
+            <p class="panel__hint">Join our Discord for the latest updates and new scripts!</p>
+            <a class="discord-btn" href="https://discord.gg/NdzUJRkKeA" target="_blank" rel="noopener">
+              <img class="discord-btn__img" src="https://pngimg.com/uploads/discord/discord_PNG8.png" alt="Discord" />
+              <span>Join Discord</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>WaziScripts</span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
